@@ -11,6 +11,7 @@ import { default as model } from './model/index'
 import { default as onboarding } from './onboarding/index'
 import { default as project } from './project'
 import { default as serial } from './serial/index'
+import { default as sscma } from './sscma/index'
 import { default as store } from './store/index'
 import { default as tool } from './tool/index'
 import { p, r } from './trpc'
@@ -29,6 +30,7 @@ export { default as hardware } from './hardware'
 export { default as model } from './model/index'
 export { default as onboarding } from './onboarding/index'
 export { default as project } from './project'
+export { default as sscma } from './sscma/index'
 export { default as serial } from './serial/index'
 export { default as store } from './store/index'
 export { default as tool } from './tool/index'
@@ -50,6 +52,7 @@ export const router = (options: CreateAilyCoreRouterOptions) =>
 		model,
 		onboarding,
 		project,
+		sscma,
 		serial,
 		store,
 		tool

@@ -1,4 +1,5 @@
 export * from './command'
 export * from './detect'
+export * from './flash'
 export * from './install'
 export * from './shared'

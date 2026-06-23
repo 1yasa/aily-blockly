@@ -1,5 +1,6 @@
 export * from './abs'
 export { normalizeProjectAbi, parseProjectAbiText, stringifyProjectAbi } from './abi'
+export * from './hardware'
 export {
 	readProjectAbiSummary,
 	readProjectActiveWorkspace,
@@ -7,6 +8,7 @@ export {
 	syncProjectUsedLibraryManifest,
 	writeProjectDocument
 } from './project'
+export * from './sscma'
 export type {
 	BoardIndexItem,
 	CategoryCount,

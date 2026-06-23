@@ -102,3 +102,43 @@ export interface HardwareModelFileRequest {
 	/** 模型标识 */
 	modelId: string
 }
+
+/**
+ * 下载后的硬件二进制文件信息。
+ */
+export interface HardwareDownloadedBinaryFile {
+	/** 本地文件路径。 */
+	filePath: string
+	/** 文件名称。 */
+	filename: string
+	/** 文件大小。 */
+	size: number
+	/** 推荐烧录地址。 */
+	address: number
+	/** 校验和。 */
+	checksum?: string
+}
+
+/**
+ * 固件文件下载输入。
+ */
+export interface HardwareDownloadFirmwareInput {
+	/** 应用数据目录。 */
+	appDataPath: string
+	/** 固件元数据。 */
+	firmware: HardwareFirmwareInfo
+	/** 目标烧录地址。 */
+	address?: number
+}
+
+/**
+ * 模型文件下载输入。
+ */
+export interface HardwareDownloadModelInput {
+	/** 应用数据目录。 */
+	appDataPath: string
+	/** 模型快照。 */
+	snapshot: HardwareModelSnapshot
+	/** 目标设备类型。 */
+	xiaoType: HardwareXiaoType
+}

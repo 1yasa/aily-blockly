@@ -66,3 +66,51 @@ export interface HardwareEsptoolFlashOptions {
 	/** 烧录后动作 */
 	afterFlash?: 'hard_reset' | 'no_reset'
 }
+
+/**
+ * Esptool 单文件烧录输入。
+ */
+export interface HardwareEsptoolFlashFileInput {
+	/** 应用数据目录。 */
+	appDataPath: string
+	/** 宿主平台。 */
+	platform: HardwareEsptoolPlatform
+	/** 待烧录文件路径。 */
+	filePath: string
+	/** 烧录地址。 */
+	address: number
+	/** 串口路径。 */
+	port: string
+	/** 芯片类型。 */
+	chip?: string
+	/** 波特率。 */
+	baudRate?: number
+	/** 烧录前动作。 */
+	beforeFlash?: 'default_reset' | 'no_reset'
+	/** 烧录后动作。 */
+	afterFlash?: 'hard_reset' | 'no_reset'
+	/** 可选安装包规格。 */
+	packageSpec?: string
+}
+
+/**
+ * Esptool 单文件烧录结果。
+ */
+export interface HardwareEsptoolFlashResult {
+	/** 当前是否成功。 */
+	success: boolean
+	/** 最终使用的命令。 */
+	command?: string
+	/** 标准输出。 */
+	stdout: string
+	/** 标准错误。 */
+	stderr: string
+	/** 退出码。 */
+	exitCode: number
+	/** 结构化进度事件。 */
+	progressEvents: Array<import('../upload').HardwareUploadProgressEvent>
+	/** 面向上层的消息。 */
+	message: string
+	/** 出错信息。 */
+	error?: string
+}
